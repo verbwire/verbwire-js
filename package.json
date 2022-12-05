@@ -1,0 +1,19 @@
+{
+  "name": "verbwire",
+  "version": "1.0.0",
+  "description": "Verbwire Javascript SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verbwire/verbwire-js.git"
+  },
+  "author": "Verbwire Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/verbwire/verbwire-js/issues"
+  },
+  "homepage": "https://github.com/verbwire/verbwire-js#readme"
+}

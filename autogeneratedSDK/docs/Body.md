@@ -1,0 +1,36 @@
+# VerbwireApiDocumentation.Body
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**contractName** | **String** |  | 
+**contractSymbol** | **String** |  | 
+**recipientAddress** | **String** |  | 
+**chain** | **String** |  | 
+**contractType** | **String** |  | [optional] 
+
+<a name="ChainEnum"></a>
+## Enum: ChainEnum
+
+* `goerli` (value: `"goerli"`)
+* `bsc-testnet` (value: `"bsc-testnet"`)
+* `fuji` (value: `"fuji"`)
+* `mumbai` (value: `"mumbai"`)
+* `arbitrum-goerli` (value: `"arbitrum-goerli"`)
+* `optimism-goerli` (value: `"optimism-goerli"`)
+* `fantom-testnet` (value: `"fantom-testnet"`)
+* `ethereum` (value: `"ethereum"`)
+* `bsc` (value: `"bsc"`)
+* `avalanche` (value: `"avalanche"`)
+* `polygon` (value: `"polygon"`)
+* `arbitrum` (value: `"arbitrum"`)
+* `optimism` (value: `"optimism"`)
+* `fantom` (value: `"fantom"`)
+
+
+<a name="ContractTypeEnum"></a>
+## Enum: ContractTypeEnum
+
+* `nft721` (value: `"nft721"`)
+* `nft721A` (value: `"nft721A"`)
+
