@@ -1,6 +1,6 @@
 {
   "name": "verbwire",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Verbwire Javascript SDK",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/verbwire/verbwire-js/issues"
   },
-  "homepage": "https://github.com/verbwire/verbwire-js#readme"
+  "homepage": "https://github.com/verbwire/verbwire-js#readme",
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
 }
