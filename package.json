@@ -1,6 +1,6 @@
 {
   "name": "verbwire",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Verbwire Javascript SDK",
   "main": "index.js",
   "scripts": {
