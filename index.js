@@ -988,40 +988,6 @@ module.exports = (apiKey) => {
         resolve(error);
       });
     });
-  }; /** * Deploy a Custom Contract * @param {string} contractName * @param {string} contractSymbol * @param {string} recipientAddress * @param {string} chain * @returns {Promise} */
-  module.deploy.deployCustomContract = function({
-                                                  contractName,
-                                                  contractSymbol,
-                                                  recipientAddress,
-                                                  chain
-                                                }) {
-    return new Promise((resolve) => {
-      let req = arguments[0];
-      let methodType = JSON.stringify(json.paths[`/nft/deploy/deployCustomContract`]);
-      const methodTypeparse = JSON.parse(methodType);
-      let reqBody = JSON.stringify(json.paths[`/nft/deploy/deployCustomContract`].post.requestBody.content["multipart/form-data"].schema.properties);
-      const myObj = JSON.parse(reqBody);
-      var data = new FormData();
-      for (const x in myObj) {
-        if (req[x] !== undefined) {
-          data.append(x, req[x]);
-        }
-      }
-      var config = {
-        method: 'post',
-        url: 'https://api.verbwire.com/v1/nft/deploy/deployCustomContract',
-        headers: {
-          'X-API-Key': apiKey,
-          ...data.getHeaders()
-        },
-        data: data
-      };
-      axios(config).then(function(response) {
-        resolve(response.data);
-      }).catch(function(error) {
-        resolve(error);
-      });
-    });
   }; /** * Burn NFT * @param {string} contractAddress * @param {string} tokenId * @param {string} chain * @returns {Promise} */
   module.deploy.burn = function({
                                   contractAddress,
@@ -1460,7 +1426,7 @@ module.exports = (apiKey) => {
         resolve(error);
       });
     });
-  }; /** * Mint to a Wallet Address * @param {string} mintQty * @param {string} contractAddress * @param {string} recipientAddress * @param {string} chain * @returns {Promise} */
+  }; /** * Collection Mint to a Wallet Address * @param {string} mintQty * @param {string} contractAddress * @param {string} recipientAddress * @param {string} chain * @returns {Promise} */
   module.mint.collectionReserveMint = function({
                                                  mintQty,
                                                  contractAddress,
@@ -1482,76 +1448,6 @@ module.exports = (apiKey) => {
       var config = {
         method: 'post',
         url: 'https://api.verbwire.com/v1/nft/mint/collectionReserveMint',
-        headers: {
-          'X-API-Key': apiKey,
-          ...data.getHeaders()
-        },
-        data: data
-      };
-      axios(config).then(function(response) {
-        resolve(response.data);
-      }).catch(function(error) {
-        resolve(error);
-      });
-    });
-  }; /** * Mint Custom contract NFT * @param {string} metadataUrl * @param {string} contractAddress * @param {string} recipientAddress * @param {string} chain * @returns {Promise} */
-  module.mint.customContractMintFromMetadataUrl = function({
-                                                             metadataUrl,
-                                                             contractAddress,
-                                                             recipientAddress,
-                                                             chain
-                                                           }) {
-    return new Promise((resolve) => {
-      let req = arguments[0];
-      let methodType = JSON.stringify(json.paths[`/nft/mint/customContractMintFromMetadataUrl`]);
-      const methodTypeparse = JSON.parse(methodType);
-      let reqBody = JSON.stringify(json.paths[`/nft/mint/customContractMintFromMetadataUrl`].post.requestBody.content["multipart/form-data"].schema.properties);
-      const myObj = JSON.parse(reqBody);
-      var data = new FormData();
-      for (const x in myObj) {
-        if (req[x] !== undefined) {
-          data.append(x, req[x]);
-        }
-      }
-      var config = {
-        method: 'post',
-        url: 'https://api.verbwire.com/v1/nft/mint/customContractMintFromMetadataUrl',
-        headers: {
-          'X-API-Key': apiKey,
-          ...data.getHeaders()
-        },
-        data: data
-      };
-      axios(config).then(function(response) {
-        resolve(response.data);
-      }).catch(function(error) {
-        resolve(error);
-      });
-    });
-  }; /** * Custom Contract NFT Mint from image * @param {string} filePath * @param {string} name * @param {string} description * @param {string} recipientAddress * @param {string} contractAddress * @param {string} chain * @returns {Promise} */
-  module.mint.customContractMintFromFile = function({
-                                                      filePath,
-                                                      name,
-                                                      description,
-                                                      recipientAddress,
-                                                      contractAddress,
-                                                      chain
-                                                    }) {
-    return new Promise((resolve) => {
-      let req = arguments[0];
-      let methodType = JSON.stringify(json.paths[`/nft/mint/customContractMintFromFile`]);
-      const methodTypeparse = JSON.parse(methodType);
-      let reqBody = JSON.stringify(json.paths[`/nft/mint/customContractMintFromFile`].post.requestBody.content["multipart/form-data"].schema.properties);
-      const myObj = JSON.parse(reqBody);
-      var data = new FormData();
-      for (const x in myObj) {
-        if (req[x] !== undefined) {
-          data.append(x, req[x]);
-        }
-      }
-      var config = {
-        method: 'post',
-        url: 'https://api.verbwire.com/v1/nft/mint/customContractMintFromFile',
         headers: {
           'X-API-Key': apiKey,
           ...data.getHeaders()
