@@ -7,7 +7,41 @@ module.exports = (apiKey) => {
   var module = {};
 
   // update  generated modules and functions start
-  module.data = {}; /** * Get all NFTs owned by a wallet address * @param {string} walletAddress * @param {string} chain * @returns {Promise} */
+  module.data = {}; /** * Get is the wallet address a holder of a token? * @param {string} walletAddress * @param {string} contractAddress * @param {string} chain * @returns {Promise} */
+  module.data.isWalletHolderOfToken = function({
+                                                 walletAddress,
+                                                 contractAddress,
+                                                 chain
+                                               }) {
+    return new Promise((resolve) => {
+      let req = arguments[0];
+      let methodType = JSON.stringify(json.paths[`/nft/data/isWalletHolderOfToken`]);
+      const methodTypeparse = JSON.parse(methodType);
+      let reqBody = JSON.stringify(json.paths[`/nft/data/isWalletHolderOfToken`].get.parameters);
+      let reqData = "?";
+      if (reqBody !== undefined) {
+        const myObj = JSON.parse(reqBody);
+        for (let k = 0; k < myObj.length; k++) {
+          if (req[myObj[k]["name"]] !== undefined) {
+            reqData += myObj[k]["name"] + "=" + req[myObj[k]["name"]] + "&";
+          }
+        }
+      }
+      var config = {
+        method: 'get',
+        url: 'https://api.verbwire.com/v1/nft/data/isWalletHolderOfToken' + reqData,
+        headers: {
+          accept: 'application/json',
+          'X-API-Key': apiKey,
+        },
+      };
+      axios(config).then(function(response) {
+        resolve(response.data);
+      }).catch(function(error) {
+        resolve(error);
+      });
+    });
+  }; /** * Get all NFTs owned by a wallet address * @param {string} walletAddress * @param {string} chain * @returns {Promise} */
   module.data.owned = function({
                                  walletAddress,
                                  chain
